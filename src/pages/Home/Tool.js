@@ -2,7 +2,6 @@ import React from "react";
 
 const Tool = ({ tool }) => {
   const { name, img, minimum, quantity, description, price } = tool;
-  console.log(minimum, quantity);
   return (
     <div class="card card-compact lg:max-w-lg bg-base-100 shadow-xl">
       <figure>
@@ -12,7 +11,11 @@ const Tool = ({ tool }) => {
         <h2 class="card-title text-accent hover:text-secondary transition duration-0 hover:duration-200">
           {name}
         </h2>
-        <p>{description}</p>
+        <p title={description}>
+          {description.length > 100
+            ? description.slice(0, 100) + "..."
+            : description}
+        </p>
         <p className="text-xl">
           Per Item Price: $ <span className="text-secondary">{price}</span>{" "}
         </p>
