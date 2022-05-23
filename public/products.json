@@ -1,0 +1,56 @@
+[
+  {
+    "_id": "01",
+    "name": "13 Piece Drill Set",
+    "img": "https://i.ibb.co/kQq96Y5/13-Piece-Drill-Set.jpg",
+    "minimum": "1003",
+    "quantity": "82933",
+    "description": "This is the CK Tools AV08011 13 Piece Drill Set 1.5mm to 6.5mm Assorted HSS Drill Bit at Sparks. The drill bits in this set are designed for drilling through metal. They are precision ground for reliable drilling.",
+    "price": 6.07
+  },
+  {
+    "_id": "02",
+    "name": "Cable Tie Tensioning Tool",
+    "img": "https://i.ibb.co/nDN5vpj/Cable-Tie-Tensioning-Tool.jpg",
+    "minimum": "1003",
+    "quantity": "11300",
+    "description": "This is a stainless steel cable tie tensioning tool in black, a semi-automatic cable tie tensioning tool with cut-off. It is ideal for stainless steel ties up to 9mm diameter.",
+    "price": 31.35
+  },
+  {
+    "_id": "03",
+    "name": "Screwdriver Set ",
+    "img": "https://i.ibb.co/k8KkB1Q/Screwdriver-Set.jpg",
+    "minimum": "1003",
+    "quantity": "45078",
+    "description": "This is the CK Tools T4925, a 1000V VDE Interchangeable Slim bladed screwdriver set in a Compact Black Fabric Storage Pouch. 1000V VDE Interchangeable Slim Bladed Screwdriver Set - CK Tools T4925-Specs",
+    "price": 23.18
+  },
+  {
+    "_id": "04",
+    "name": "Automatic Stripper",
+    "img": "https://i.ibb.co/bd31Fcz/Automatic-Stripper.jpg",
+    "minimum": "1003",
+    "quantity": "67237",
+    "description": "You can use Quickwire automatic wire strippers to quickly and efficiently strip your cable. This FKZ Flat Wire Automatic Stripper is a high quality automatic wire stripper suitable for PVC-insulated flat cables with diameters from 0.75mm2 to 2.5mm2 and width of up to 12mm.",
+    "price": 18.5
+  },
+  {
+    "_id": "05",
+    "name": "Electrician's Test Kit",
+    "img": "https://i.ibb.co/zbhwk3s/Electrician-s-Test-Kit.jpg",
+    "minimum": "1003",
+    "quantity": "45035",
+    "description": "The EKB001 kit includes the Award Winning CombiVolt™ 2 Voltage & Continuity tester, fully compliant to the latest 2 pole tester regulations - BS EN 61243-3:2010.",
+    "price": 29.99
+  },
+  {
+    "_id": "06",
+    "name": "Pocket Crimp Tool",
+    "img": "https://i.ibb.co/FD1ZF1f/Pocket-Crimp-Tool.jpg",
+    "minimum": "1003",
+    "quantity": "47563",
+    "description": "This is a pocket crimping tool, an essential heavy-duty crimp tool ideal for fitting snap-seal and F-type connectors, Snap-seal Pocket Crimp Tool - Specs",
+    "price": 8.61
+  }
+]
