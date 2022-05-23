@@ -5,7 +5,7 @@ const Tools = () => {
   const [tools, setTools] = useState([]);
   const slicedTools = tools.slice(0, 6);
   useEffect(() => {
-    const url = "products.json";
+    const url = "http://localhost:5000/product";
     fetch(url)
       .then((res) => res.json())
       .then((data) => setTools(data));
