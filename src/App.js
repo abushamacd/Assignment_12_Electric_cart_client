@@ -13,6 +13,7 @@ import Dashboard from "./pages/Dashboard/Dashboard";
 import Profile from "./pages/Dashboard/Profile";
 import Orders from "./pages/Dashboard/Orders";
 import AddReview from "./pages/Dashboard/AddReview";
+import NotFound from "./pages/Shared/NotFound";
 
 function App() {
   return (
@@ -43,6 +44,7 @@ function App() {
             </RequiredAuth>
           }
         />
+        <Route path="/*" element={<NotFound />} />
       </Routes>
       <Footer />
       <ToastContainer />
