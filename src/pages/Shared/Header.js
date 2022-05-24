@@ -26,6 +26,9 @@ const Header = () => {
         <Link to="/dashboard">Dashboard</Link>
       </li>
       <li>
+        <Link to="/porfolio">My Porfolio</Link>
+      </li>
+      <li>
         {user ? (
           <button className="btn btn-ghost" onClick={logout}>
             <span className="text-primary">{user?.displayName}</span> Sign Out
