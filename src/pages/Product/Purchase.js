@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
 import { useForm } from "react-hook-form";
+import { toast } from "react-toastify";
 
 const Purchase = () => {
   // Get ID
@@ -27,6 +28,22 @@ const Purchase = () => {
 
   const onSubmit = (data) => {
     console.log(data);
+    const url = `http://localhost:5000/order`;
+    fetch(url, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    })
+      .then((res) => res.json())
+      .then((result) => {
+        if (result.insertedId) {
+          toast("Your Order is place");
+        }
+      });
+    // Reset form after add data
+    reset();
   };
 
   return (
