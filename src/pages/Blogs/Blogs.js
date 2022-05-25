@@ -68,6 +68,21 @@ const Blogs = () => {
           Modern languages use prototyping to set it today.
         </p>
       </div>
+      {/* Fourth question */}
+      <div className="qa">
+        <h2 className="text-2xl text-accent">
+          <span>Q4:</span> Why you do not set the state directly in React?
+        </h2>
+        <p>
+          <span>Ans:</span> <br />A composition's states contain its data.
+          Directly updating the state does not update this.state immediately. A
+          pending state transition is created instead, and when accessed after
+          calling this method, the present value will be returned. Calling
+          setState() after you update it may just replace the changes you made.
+          All components will lose control of the state. That's why do not set
+          the state directly.
+        </p>
+      </div>
     </div>
   );
 };
