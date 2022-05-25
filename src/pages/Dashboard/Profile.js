@@ -64,9 +64,7 @@ const Profile = () => {
                 </tbody>
               </table>
 
-              <div class="text-center my-3">
-                <h2> Update Button</h2>
-              </div>
+              <div class="text-center my-3">h2</div>
             </div>
           </div>
         </div>
