@@ -4,6 +4,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
+import Loading from "../Shared/Loading";
 
 const Purchase = () => {
   // Get ID
@@ -19,31 +20,70 @@ const Purchase = () => {
   const { id: _id, name, img, minimum, quantity, description, price } = tools;
   const [user, loading, error] = useAuthState(auth);
 
-  const {
-    register,
-    formState: { errors },
-    handleSubmit,
-    reset,
-  } = useForm();
+  const [inputQuantity, setInputQuantity] = useState(0);
 
-  const onSubmit = (data) => {
-    console.log(data);
-    const url = `http://localhost:5000/order`;
-    fetch(url, {
+  const totalPrice = inputQuantity * price;
+  console.log(inputQuantity, ":", totalPrice);
+
+  // const {
+  //   register,
+  //   formState: { errors },
+  //   handleSubmit,
+  //   reset,
+  // } = useForm();
+
+  // const onSubmit = (data) => {
+  //   console.log(data);
+  //   const url = `http://localhost:5000/order`;
+  //   fetch(url, {
+  //     method: "POST",
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //     },
+  //     body: JSON.stringify(data),
+  //   })
+  //     .then((res) => res.json())
+  //     .then((result) => {
+  //       if (result.insertedId) {
+  //         toast("Your Order is place");
+  //       }
+  //     });
+  //   // Reset form after add data
+  //   reset();
+  // };
+
+  // Booking Order
+  const handleOrder = (event) => {
+    event.preventDefault();
+
+    const order = {
+      productName: event.target.pName.value,
+      name: event.target.name.value,
+      email: event.target.email.value,
+      address: event.target.address.value,
+      phone: event.target.phone.value,
+      price: totalPrice,
+      quantity: event.target.quantity.value,
+    };
+
+    console.log(order);
+
+    fetch("http://localhost:5000/order", {
       method: "POST",
       headers: {
-        "Content-Type": "application/json",
+        "content-type": "application/json",
       },
-      body: JSON.stringify(data),
+      body: JSON.stringify(order),
     })
       .then((res) => res.json())
-      .then((result) => {
-        if (result.insertedId) {
-          toast("Your Order is place");
+      .then((data) => {
+        console.log(data);
+        if (data.insertedId) {
+          toast(`Place Order`);
+        } else {
+          toast.error(`Order Not place`);
         }
       });
-    // Reset form after add data
-    reset();
   };
 
   return (
@@ -87,135 +127,95 @@ const Purchase = () => {
           <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
             <div class="card-body">
               <h2 className="text-center text-2xl font-bold">Order Info</h2>
-              <form
-                className="d-flex flex-column"
-                onSubmit={handleSubmit(onSubmit)}
-              >
-                {/* User name */}
-                <div className="form-control w-full max-w-xs">
-                  <label className="label">
-                    <span className="label-text">Your name</span>
-                  </label>
-                  <input
-                    type="text"
-                    placeholder="Type your name"
-                    className="input input-bordered w-full max-w-xs"
-                    value={user?.displayName}
-                    readOnly
-                    {...register("name")}
-                  />
-                </div>
-                {/* Email*/}
-                <div className="form-control w-full max-w-xs">
-                  <label className="label">
-                    <span className="label-text">Email</span>
-                  </label>
-                  <input
-                    type="email"
-                    placeholder="Type your email"
-                    className="input input-bordered w-full max-w-xs"
-                    value={user?.email}
-                    readOnly
-                    {...register("email")}
-                  />
-                </div>
-                {/* Address*/}
-                <div className="form-control w-full max-w-xs">
-                  <label className="label">
-                    <span className="label-text">Address</span>
-                  </label>
-                  <input
-                    type="text"
-                    placeholder="Type your address"
-                    className="input input-bordered w-full max-w-xs"
-                    {...register("address", {
-                      required: {
-                        value: true,
-                        message: "Address is required",
-                      },
-                    })}
-                  />
-                  <label className="label">
-                    {errors.address?.type === "required" && (
-                      <span className="label-text-alt text-red-600">
-                        {errors.address.message}
-                      </span>
-                    )}
-                  </label>
-                </div>
-                {/* Phone*/}
-                <div className="form-control w-full max-w-xs">
-                  <label className="label">
-                    <span className="label-text">Phone number</span>
-                  </label>
-                  <input
-                    type="number"
-                    placeholder="Type your Phone number"
-                    className="input input-bordered w-full max-w-xs"
-                    {...register("phone", {
-                      required: {
-                        value: true,
-                        message: "Phone number is required",
-                      },
-                    })}
-                  />
-                  <label className="label">
-                    {errors.phone?.type === "required" && (
-                      <span className="label-text-alt text-red-600">
-                        {errors.phone.message}
-                      </span>
-                    )}
-                  </label>
-                </div>
-                {/* Id*/}
-                <div className="form-control w-full max-w-xs">
-                  <label className="label">
-                    <span className="label-text">Product Id</span>
-                  </label>
-                  <input
-                    type="text"
-                    placeholder="Type your email"
-                    className="input input-bordered w-full max-w-xs"
-                    value={id}
-                    readOnly
-                    {...register("id")}
-                  />
-                </div>
-                {/* Quantity */}
-                <div className="form-control w-full max-w-xs">
-                  <label className="label">
-                    <span className="label-text">
-                      Minimum Order (<small>Of this item</small>) :
-                      <span className="text-secondary">{minimum}</span>{" "}
-                    </span>
-                  </label>
-                  <input
-                    type="number"
-                    min={minimum}
-                    max={quantity}
-                    placeholder="Type your order quantity"
-                    className="input input-bordered w-full max-w-xs"
-                    {...register("quantity", {
-                      required: {
-                        value: true,
-                        message: "Quantity number is required",
-                      },
-                    })}
-                  />
-                  <label className="label">
-                    {errors.quantity?.type === "required" && (
-                      <span className="label-text-alt text-red-600">
-                        {errors.quantity.message}
-                      </span>
-                    )}
-                  </label>
-                </div>
+              <form onSubmit={handleOrder}>
+                {/* <form> */}
 
-                {/* Submit */}
+                <label htmlFor="">
+                  <small>Your name</small>
+                </label>
                 <input
-                  className="btn btn-primary uppercase text-white font-bold bg-gradient-to-r from-secondary to-primary w-full mt-2"
+                  type="text"
+                  name="name"
+                  value={user?.displayName}
+                  disabled
+                  className="input input-bordered input-secondary w-full max-w-lg mt-2"
+                />
+                <label htmlFor="">
+                  <small>Your email</small>
+                </label>
+                <input
+                  type="email"
+                  name="email"
+                  value={user?.email}
+                  disabled
+                  className="input input-bordered input-secondary w-full max-w-lg mt-2"
+                />
+
+                <label htmlFor="">
+                  <small>Shipping Address</small>
+                </label>
+                <input
+                  required
+                  type="text"
+                  name="address"
+                  placeholder="Your Address"
+                  className="input input-bordered input-secondary w-full max-w-lg mt-2"
+                />
+                <label htmlFor="">
+                  <small>Your phone number</small>
+                </label>
+                <input
+                  required
+                  type="text"
+                  name="phone"
+                  placeholder="Phone number"
+                  className="input input-bordered input-secondary w-full max-w-lg mt-2"
+                />
+
+                <label htmlFor="">
+                  <small>Product name</small>
+                </label>
+                <input
+                  disabled
+                  name="pName"
+                  value={name}
+                  className="input input-bordered input-secondary w-full max-w-lg mt-2"
+                />
+                <label htmlFor="">
+                  <small>Per unit product price </small>
+                </label>
+                <input
+                  type="number"
+                  name="price"
+                  value={price}
+                  disabled
+                  placeholder="Phone number"
+                  className="input input-bordered input-secondary w-full max-w-lg mt-2"
+                />
+                <label htmlFor="">
+                  <small className="text-red-600">
+                    Minimum Order {minimum}{" "}
+                  </small>
+                </label>
+                <input
+                  required
+                  type="number"
+                  min={minimum}
+                  max={quantity}
+                  onChange={(e) => setInputQuantity(e.target.value)}
+                  name="quantity"
+                  placeholder="Product Quantiy"
+                  className="input input-bordered input-secondary w-full max-w-lg mt-2"
+                />
+                <p>Total price: {totalPrice} </p>
+                <input
+                  disabled={
+                    inputQuantity < parseInt(minimum) ||
+                    inputQuantity > parseInt(quantity)
+                  }
                   type="submit"
                   value="Place Order"
+                  className="btn bg-secondary text-black hover:text-white w-full max-w-lg mt-2"
                 />
               </form>
             </div>
