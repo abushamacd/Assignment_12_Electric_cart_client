@@ -15,6 +15,7 @@ import Orders from "./pages/Dashboard/Orders";
 import AddReview from "./pages/Dashboard/AddReview";
 import NotFound from "./pages/Shared/NotFound";
 import Portfolio from "./pages/Others/Portfolio";
+import Blogs from "./pages/Blogs/Blogs";
 
 function App() {
   return (
@@ -43,6 +44,7 @@ function App() {
             </RequiredAuth>
           }
         />
+        <Route path="blogs" element={<Blogs />} />
         <Route path="porfolio" element={<Portfolio />} />
         <Route path="signup" element={<SignUp />} />
         <Route path="login" element={<Login />} />

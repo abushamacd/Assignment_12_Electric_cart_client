@@ -1,0 +1,17 @@
+.qa {
+  border: 2px solid blueviolet;
+  border-radius: 5px;
+  padding: 10px 46px;
+  margin: 10px;
+  background-color: bisque;
+  text-align: start;
+}
+
+.qa p span {
+  color: green;
+  font-weight: bold;
+}
+
+.section_name {
+  margin: 30px 0px;
+}

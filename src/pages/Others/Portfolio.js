@@ -119,7 +119,7 @@ const Portfolio = () => {
             <div class="card-body">
               <h2 class="card-title">{project.name}</h2>
               <p className="pb-0">{project.type}</p>
-              <a href={project.url}>
+              <a target="blank" href={project.url}>
                 {" "}
                 <span className="text-secondary">Project URL:</span>{" "}
                 {project.url}
