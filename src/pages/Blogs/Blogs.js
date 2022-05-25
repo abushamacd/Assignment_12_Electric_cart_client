@@ -2,6 +2,17 @@ import React from "react";
 import "./Blogs.css";
 
 const Blogs = () => {
+  const array = `const products = [
+    { name: "iphone 6", price: 46000, color: "silver" },
+    { name: "watch", price: 1500, color: "silver" },
+    { name: "Canon camera", price: 19000, color: "black" },
+    { name: "Nikon camera", price: 19000, color: "black" },
+  ];
+  
+  products.map(
+    (product) => product.name.includes("camera") && console.log(product)
+  );
+  `;
   return (
     <div>
       <h1 className="text-center my-5 text-5xl">Question &#38; Answer</h1>
@@ -81,6 +92,26 @@ const Blogs = () => {
           setState() after you update it may just replace the changes you made.
           All components will lose control of the state. That's why do not set
           the state directly.
+        </p>
+      </div>
+      {/* Fifth question */}
+      <div className="qa">
+        <h2 className="text-2xl text-accent">
+          <span>Q5:</span> How will find products by name of an array?
+        </h2>
+        <p>
+          <span>Ans:</span> <br />
+          <br />
+          <textarea
+            readOnly
+            value={array}
+            name=""
+            id=""
+            className="w-full"
+            rows="10"
+          >
+            {" "}
+          </textarea>
         </p>
       </div>
     </div>
