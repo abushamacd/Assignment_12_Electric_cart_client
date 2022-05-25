@@ -11,6 +11,7 @@ import { useForm } from "react-hook-form";
 
 import { Link, useNavigate } from "react-router-dom";
 import Loading from "../Shared/Loading";
+import useToken from "../../hooks/useToken";
 
 const SignUp = () => {
   // Google sign in
@@ -33,6 +34,9 @@ const SignUp = () => {
 
   // navigate
   const navigate = useNavigate();
+  // use hooks
+  const [token] = useToken(emailUser || googelUser);
+  console.log(googelUser);
 
   // Loading
   if (googelLoading || emailLoading || updating) {
@@ -51,15 +55,15 @@ const SignUp = () => {
   }
 
   // user
-  if (emailUser || googelUser) {
-    console.log(googelUser, emailUser);
+  if (token) {
+    navigate("/home");
   }
 
   // handle submit
   const onSubmit = async (data) => {
     await createUserWithEmailAndPassword(data.email, data.password);
     await updateProfile({ displayName: data.name });
-    navigate("/home");
+    // navigate("/home");
   };
 
   return (
