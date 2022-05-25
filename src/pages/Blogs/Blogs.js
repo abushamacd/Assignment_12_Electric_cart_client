@@ -26,6 +26,31 @@ const Blogs = () => {
           shouldComponentUpdate
         </p>
       </div>
+      {/* Second question */}
+      <div className="qa">
+        <h2 className="text-2xl text-accent">
+          <span>Q1:</span> What are the different ways to manage a state in a
+          React application?
+        </h2>
+        <p>
+          <span>Ans:</span> <br />
+          1. Local state - We manage local (UI) state in one or more components.
+          React's useState hook is typically used to manage state local to the
+          component.
+          <br />
+          2. Global state - Global state refers to data we manage across
+          multiple components. It is necessary to keep a global state when we
+          need to update data across multiple components, or at least across
+          them all.
+          <br />
+          3. Server state - A server-side data source that must be integrated
+          with our UI state.
+          <br />
+          4. URL state - Our URLs include data such as pathnames and query
+          parameters. Our application relies on URL state access for many of its
+          major parts.
+        </p>
+      </div>
     </div>
   );
 };
