@@ -19,16 +19,16 @@ const Reviews = () => {
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {slicedReviews.map((review) => (
-          <div key={review._id} class="rounded-lg shadow-xl bg-white p-10">
+          <div key={review._id} className="rounded-lg shadow-xl bg-white p-10">
             <img
               src={review.img}
               alt=""
-              class="rounded-full p-4 h-40 mx-auto"
+              className="rounded-full p-4 h-40 mx-auto"
             />
-            <header class=" text-2xl font-extrabold py-4 px-4 text-center">
+            <header className=" text-2xl font-extrabold py-4 px-4 text-center">
               {review.name}
             </header>
-            <div class="text-secondary text-center font-semibold flex justify-center">
+            <div className="text-secondary text-center font-semibold flex justify-center">
               {Array.from({ length: review.rating }).map((_, idx) => (
                 <span key={idx}>
                   <FaStar />

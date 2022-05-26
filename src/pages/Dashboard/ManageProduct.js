@@ -24,8 +24,8 @@ const ManageProduct = () => {
   return (
     <div>
       <h2>Orders</h2>
-      <div class="overflow-x-auto">
-        <table class="table w-full">
+      <div className="overflow-x-auto">
+        <table className="table w-full">
           {/* <!-- head --> */}
           <thead>
             <tr>
@@ -46,8 +46,8 @@ const ManageProduct = () => {
                 <td>
                   <label
                     onClick={() => setDeletingProduct(product)}
-                    for="deleteProductModal"
-                    class="btn btn-xs bg-red-600 text-base-100"
+                    htmlFor="deleteProductModal"
+                    className="btn btn-xs bg-red-600 text-base-100"
                   >
                     Delete
                   </label>

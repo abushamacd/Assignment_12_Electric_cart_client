@@ -81,7 +81,7 @@ const Header = () => {
       <div className="navbar-end lg:hidden">
         <label
           tabIndex="1"
-          for="dashboard_sidebar"
+          htmlFor="dashboard_sidebar"
           className="btn btn-ghost lg:hidden"
         >
           <svg

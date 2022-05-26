@@ -35,10 +35,10 @@ const Clients = () => {
         {clients.map((client) => (
           <div
             key={client._id}
-            class="card lg:w-full bg-base-100 shadow-xl m-2"
+            className="card lg:w-full bg-base-100 shadow-xl m-2"
           >
-            <figure class="">
-              <img src={client.img} alt="Shoes" class="rounded-xl" />
+            <figure className="">
+              <img src={client.img} alt="Shoes" className="rounded-xl" />
             </figure>
           </div>
         ))}

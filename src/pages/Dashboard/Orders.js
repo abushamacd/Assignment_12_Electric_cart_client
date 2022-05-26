@@ -31,8 +31,8 @@ const Orders = () => {
   }
   return (
     <div>
-      <div class="overflow-x-auto">
-        <table class="table w-full">
+      <div className="overflow-x-auto">
+        <table className="table w-full">
           {/* <!-- head --> */}
           <thead>
             <tr>
@@ -75,8 +75,8 @@ const Orders = () => {
                   {!order.paid && (
                     <label
                       onClick={() => setDeletingOrder(order)}
-                      for="deleteOrderModal"
-                      class="btn btn-xs bg-red-600 text-base-100"
+                      htmlFor="deleteOrderModal"
+                      className="btn btn-xs bg-red-600 text-base-100"
                     >
                       Cancel
                     </label>

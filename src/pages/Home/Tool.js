@@ -9,12 +9,12 @@ const Tool = ({ tool }) => {
     navigate(`/purchase/${id}`);
   };
   return (
-    <div class="card card-compact lg:max-w-lg bg-base-100 shadow-xl">
+    <div className="card card-compact lg:max-w-lg bg-base-100 shadow-xl">
       <figure>
         <img className="lg:max-h-40" src={img} alt="tools" />
       </figure>
-      <div class="card-body">
-        <h2 class="card-title text-accent hover:text-secondary transition duration-0 hover:duration-200">
+      <div className="card-body">
+        <h2 className="card-title text-accent hover:text-secondary transition duration-0 hover:duration-200">
           {name}
         </h2>
         <p title={description}>
@@ -41,10 +41,10 @@ const Tool = ({ tool }) => {
             )}
           </p>
         </div>
-        <div class="card-actions">
+        <div className="card-actions">
           <button
             onClick={() => navigateToPurchase(_id)}
-            class="btn btn-primary w-full"
+            className="btn btn-primary w-full"
           >
             Order Now
           </button>

@@ -31,11 +31,11 @@ const Portfolio = () => {
   ];
   return (
     <div>
-      <div class="hero min-h-screen">
-        <div class="hero-content flex-col lg:flex-row justify-between">
-          <img alt="" src={me} class="lg:max-w-lg rounded-lg shadow-2xl" />
+      <div className="hero min-h-screen">
+        <div className="hero-content flex-col lg:flex-row justify-between">
+          <img alt="" src={me} className="lg:max-w-lg rounded-lg shadow-2xl" />
           <div className="">
-            <h1 class="text-5xl font-bold mb-4">I'm Abu Shama</h1>
+            <h1 className="text-5xl font-bold mb-4">I'm Abu Shama</h1>
             <p>
               Phone: <span className="font-bold">01987268375</span>{" "}
             </p>
@@ -43,8 +43,8 @@ const Portfolio = () => {
               Email: <span className="font-bold">assiddik001@gmail.com</span>
             </p>
             <h5 className="text-3xl pt-3">Technology that I know</h5>
-            <div class="overflow-x-auto">
-              <table class="table w-full">
+            <div className="overflow-x-auto">
+              <table className="table w-full">
                 <tbody>
                   <tr>
                     <td className="p-2">HTML5</td>
@@ -74,7 +74,7 @@ const Portfolio = () => {
               <h6 className="text-1xl pt-3 font-bold">
                 Bachelor of Business Administration
               </h6>
-              <ul class="menu">
+              <ul className="menu">
                 <li>Begum Rokeya University, Rangpur.</li>
                 <li>Year: 2018 - Running</li>
                 <li>CGPA: 4.23</li>
@@ -85,7 +85,7 @@ const Portfolio = () => {
               <h6 className="text-1xl pt-3 font-bold">
                 Higher Secondary Certificate
               </h6>
-              <ul class="menu">
+              <ul className="menu">
                 <li>Chuadanga Government College, Chuadanga.</li>
                 <li>Year: 2017</li>
                 <li>GPA: 4.25</li>
@@ -96,7 +96,7 @@ const Portfolio = () => {
               <h6 className="text-1xl pt-3 font-bold">
                 Secondary School Certificate
               </h6>
-              <ul class="menu">
+              <ul className="menu">
                 <li>Victoria Jubilee High School, Chuadanga.</li>
                 <li>Year: 2015</li>
                 <li>GPA: 4.17</li>
@@ -111,13 +111,13 @@ const Portfolio = () => {
         {projects.map((project) => (
           <div
             key={project._id}
-            class="card card-compact lg:max-w-lg bg-base-100 shadow-xl "
+            className="card card-compact lg:max-w-lg bg-base-100 shadow-xl "
           >
             <figure>
               <img src={project.img} alt="Shoes" />
             </figure>
-            <div class="card-body">
-              <h2 class="card-title">{project.name}</h2>
+            <div className="card-body">
+              <h2 className="card-title">{project.name}</h2>
               <p className="pb-0">{project.type}</p>
               <a target="blank" href={project.url}>
                 {" "}

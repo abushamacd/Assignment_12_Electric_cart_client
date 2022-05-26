@@ -89,59 +89,59 @@ const Profile = () => {
     <div>
       <h2>Profile</h2>
 
-      <div class="hero min-h-fit">
-        <div class="hero-content flex-col lg:flex-row md:flex-row">
-          <div class="text-center lg:text-left">
-            <div class="flex items-center h-screen w-full justify-center">
-              <div class="max-w-xs">
-                <div class="bg-white shadow-xl rounded-lg py-3">
-                  <div class="photo-wrapper p-2">
+      <div className="hero min-h-fit">
+        <div className="hero-content flex-col lg:flex-row md:flex-row">
+          <div className="text-center lg:text-left">
+            <div className="flex items-center h-screen w-full justify-center">
+              <div className="max-w-xs">
+                <div className="bg-white shadow-xl rounded-lg py-3">
+                  <div className="photo-wrapper p-2">
                     <img
-                      class="w-32 h-32 rounded-full mx-auto"
+                      className="w-32 h-32 rounded-full mx-auto"
                       src={lUser?.img || "https://i.ibb.co/MgsTCcv/avater.jpg"}
                       alt=""
                     />
                   </div>
-                  <div class="p-2">
-                    <h3 class="text-center text-xl text-gray-900 font-medium leading-8">
+                  <div className="p-2">
+                    <h3 className="text-center text-xl text-gray-900 font-medium leading-8">
                       {lUser?.name}
                     </h3>
-                    <table class="text-xs my-3">
+                    <table className="text-xs my-3">
                       <tbody>
                         <tr>
-                          <td class="px-2 py-2 text-gray-500 font-semibold">
+                          <td className="px-2 py-2 text-gray-500 font-semibold">
                             Address
                           </td>
-                          <td class="px-2 py-2">{lUser?.address}</td>
+                          <td className="px-2 py-2">{lUser?.address}</td>
                         </tr>
                         <tr>
-                          <td class="px-2 py-2 text-gray-500 font-semibold">
+                          <td className="px-2 py-2 text-gray-500 font-semibold">
                             Phone
                           </td>
-                          <td class="px-2 py-2">{lUser?.phone}</td>
+                          <td className="px-2 py-2">{lUser?.phone}</td>
                         </tr>
                         <tr>
-                          <td class="px-2 py-2 text-gray-500 font-semibold">
+                          <td className="px-2 py-2 text-gray-500 font-semibold">
                             Email
                           </td>
-                          <td class="px-2 py-2">{lUser?.email}</td>
+                          <td className="px-2 py-2">{lUser?.email}</td>
                         </tr>
                         <tr>
-                          <td class="px-2 py-2 text-gray-500 font-semibold">
+                          <td className="px-2 py-2 text-gray-500 font-semibold">
                             Education
                           </td>
-                          <td class="px-2 py-2">{lUser?.education}</td>
+                          <td className="px-2 py-2">{lUser?.education}</td>
                         </tr>
                         <tr>
-                          <td class="px-2 py-2 text-gray-500 font-semibold">
+                          <td className="px-2 py-2 text-gray-500 font-semibold">
                             Occupation
                           </td>
-                          <td class="px-2 py-2">{lUser?.occupation}</td>
+                          <td className="px-2 py-2">{lUser?.occupation}</td>
                         </tr>
                       </tbody>
                     </table>
 
-                    <div class="text-center my-3 flex justify-center text-2xl text-secondary">
+                    <div className="text-center my-3 flex justify-center text-2xl text-secondary">
                       <a target="blank" href={lUser?.linkedin}>
                         <FaLinkedin />
                       </a>
@@ -154,8 +154,8 @@ const Profile = () => {
               </div>
             </div>
           </div>
-          <div class="card flex-shrink-0 w-full max-w-lg shadow-2xl bg-base-100">
-            <div class="card-body">
+          <div className="card flex-shrink-0 w-full max-w-lg shadow-2xl bg-base-100">
+            <div className="card-body">
               <h2 className="text-center text-2xl font-bold">Profile Update</h2>
 
               <form onSubmit={handleSubmit(onSubmit)}>

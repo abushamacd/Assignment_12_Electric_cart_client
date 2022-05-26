@@ -57,15 +57,15 @@ const Purchase = () => {
 
   return (
     <div>
-      <div class="hero min-h-fit">
-        <div class="hero-content flex-col lg:flex-row md:flex-row">
-          <div class="text-center lg:text-left">
-            <div class="card card-compact lg:max-w-lg bg-base-100 shadow-xl">
+      <div className="hero min-h-fit">
+        <div className="hero-content flex-col lg:flex-row md:flex-row">
+          <div className="text-center lg:text-left">
+            <div className="card card-compact lg:max-w-lg bg-base-100 shadow-xl">
               <figure>
                 <img className="lg:max-h-80" src={img} alt="tools" />
               </figure>
-              <div class="card-body">
-                <h2 class="card-title text-accent hover:text-secondary transition duration-0 hover:duration-200">
+              <div className="card-body">
+                <h2 className="card-title text-accent hover:text-secondary transition duration-0 hover:duration-200">
                   {name}
                 </h2>
                 <p title={description}>{description}</p>
@@ -93,8 +93,8 @@ const Purchase = () => {
               </div>
             </div>
           </div>
-          <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-            <div class="card-body">
+          <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+            <div className="card-body">
               <h2 className="text-center text-2xl font-bold">Order Info</h2>
               <form onSubmit={handleOrder}>
                 {/* <form> */}
