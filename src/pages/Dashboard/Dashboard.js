@@ -44,6 +44,9 @@ const Dashboard = () => {
               <li className="border-b-2 border-secondary">
                 <Link to={"/dashboard/addproduct"}>Add A Product</Link>
               </li>
+              <li className="border-b-2 border-secondary">
+                <Link to={"/dashboard/manageproduct"}>Manage Products</Link>
+              </li>
             </>
           )}
         </ul>
