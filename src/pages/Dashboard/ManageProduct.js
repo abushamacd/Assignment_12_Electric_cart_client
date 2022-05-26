@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { useQuery } from "react-query";
 import Loading from "../Shared/Loading";
+import ProductDeleteModal from "./ProductDeleteModal";
 
 const ManageProduct = () => {
+  const [deletingProduct, setDeletingProduct] = useState(null);
   const {
     data: products,
     isLoading,
@@ -16,7 +18,7 @@ const ManageProduct = () => {
     }).then((res) => res.json())
   );
 
-  console.log(products);
+  console.log(deletingProduct);
 
   if (isLoading) {
     return <Loading />;
@@ -33,8 +35,7 @@ const ManageProduct = () => {
               <th>Name</th>
               <th>Price</th>
               <th>Quantity</th>
-              <th>Remove</th>
-              <th>Payment</th>
+              <th>Action</th>
             </tr>
           </thead>
           <tbody>
@@ -44,12 +45,27 @@ const ManageProduct = () => {
                 <td>{product.name}</td>
                 <td>{product.price}</td>
                 <td>{product.quantity}</td>
-                <td>{product.treatment}</td>
+                <td>
+                  <label
+                    onClick={() => setDeletingProduct(product)}
+                    for="deleteProductModal"
+                    class="btn btn-xs bg-red-600 text-base-100"
+                  >
+                    Delete
+                  </label>
+                </td>
               </tr>
             ))}
           </tbody>
         </table>
       </div>
+      {deletingProduct && (
+        <ProductDeleteModal
+          deletingProduct={deletingProduct}
+          refetch={refetch}
+          setDeletingProduct={setDeletingProduct}
+        ></ProductDeleteModal>
+      )}
     </div>
   );
 };
