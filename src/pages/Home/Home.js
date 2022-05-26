@@ -1,5 +1,6 @@
 import React from "react";
 import Banner from "./Banner";
+import Clients from "./Clients";
 import Newsletter from "./Newsletter";
 import Reviews from "./Reviews";
 import Summarys from "./Summarys";
@@ -13,6 +14,7 @@ const Home = () => {
       <Summarys />
       <Reviews />
       <Newsletter />
+      <Clients />
     </div>
   );
 };
