@@ -22,6 +22,9 @@ const Dashboard = () => {
           <li className="border-b-2 border-secondary">
             <Link to={"/dashboard/addreview"}>Add A Review</Link>
           </li>
+          <li className="border-b-2 border-secondary">
+            <Link to={"/dashboard/alluser"}>All Users</Link>
+          </li>
         </ul>
       </div>
     </div>
