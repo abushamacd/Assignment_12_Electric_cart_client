@@ -59,8 +59,6 @@ const Profile = () => {
             img: img,
           };
 
-          console.log("form data", update);
-
           // // Send to DB
           fetch(`http://localhost:5000/user/${email}`, {
             method: "PUT",

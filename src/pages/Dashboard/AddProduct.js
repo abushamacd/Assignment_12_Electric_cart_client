@@ -58,7 +58,6 @@ const AddProduct = () => {
               }
             });
         }
-        console.log("imgbb", result);
       });
   };
   return (

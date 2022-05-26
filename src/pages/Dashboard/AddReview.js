@@ -57,7 +57,6 @@ const AddReview = () => {
               }
             });
         }
-        console.log("imgbb", result);
       });
   };
   return (

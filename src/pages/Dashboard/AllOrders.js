@@ -19,8 +19,6 @@ const AllOrders = () => {
     }).then((res) => res.json())
   );
 
-  console.log(order);
-
   if (isLoading) {
     return <Loading />;
   }

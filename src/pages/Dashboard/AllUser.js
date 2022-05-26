@@ -17,8 +17,6 @@ const AllUser = () => {
     }).then((res) => res.json())
   );
 
-  console.log(isLoading);
-
   if (isLoading) {
     return <Loading />;
   }

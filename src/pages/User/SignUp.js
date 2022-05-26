@@ -36,7 +36,6 @@ const SignUp = () => {
   const navigate = useNavigate();
   // use hooks
   const [token] = useToken(emailUser || googelUser);
-  console.log(googelUser);
 
   // Loading
   if (googelLoading || emailLoading || updating) {

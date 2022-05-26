@@ -13,7 +13,6 @@ const OrderDeleteModal = ({ deletingOrder, refetch, setDeletingOrder }) => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         if (data.deletedCount) {
           toast.success(`Order: ${productName} is deleted.`);
           setDeletingOrder(null);

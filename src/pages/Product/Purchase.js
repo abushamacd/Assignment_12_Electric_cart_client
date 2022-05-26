@@ -23,34 +23,6 @@ const Purchase = () => {
   const [inputQuantity, setInputQuantity] = useState(0);
 
   const totalPrice = inputQuantity * price;
-  console.log(inputQuantity, ":", totalPrice);
-
-  // const {
-  //   register,
-  //   formState: { errors },
-  //   handleSubmit,
-  //   reset,
-  // } = useForm();
-
-  // const onSubmit = (data) => {
-  //   console.log(data);
-  //   const url = `http://localhost:5000/order`;
-  //   fetch(url, {
-  //     method: "POST",
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //     },
-  //     body: JSON.stringify(data),
-  //   })
-  //     .then((res) => res.json())
-  //     .then((result) => {
-  //       if (result.insertedId) {
-  //         toast("Your Order is place");
-  //       }
-  //     });
-  //   // Reset form after add data
-  //   reset();
-  // };
 
   // Booking Order
   const handleOrder = (event) => {
@@ -66,8 +38,6 @@ const Purchase = () => {
       quantity: event.target.quantity.value,
     };
 
-    console.log(order);
-
     fetch("http://localhost:5000/order", {
       method: "POST",
       headers: {
@@ -77,7 +47,6 @@ const Purchase = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         if (data.insertedId) {
           toast(`Place Order`);
         } else {

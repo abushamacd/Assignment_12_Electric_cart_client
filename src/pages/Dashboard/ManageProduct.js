@@ -18,8 +18,6 @@ const ManageProduct = () => {
     }).then((res) => res.json())
   );
 
-  console.log(deletingProduct);
-
   if (isLoading) {
     return <Loading />;
   }

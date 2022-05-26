@@ -17,7 +17,6 @@ const ProductDeleteModal = ({
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         if (data.deletedCount) {
           toast.success(`Product: ${name} is deleted.`);
           setDeletingProduct(null);
