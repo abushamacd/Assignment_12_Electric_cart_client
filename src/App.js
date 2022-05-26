@@ -18,6 +18,7 @@ import Portfolio from "./pages/Others/Portfolio";
 import Blogs from "./pages/Blogs/Blogs";
 import AllUser from "./pages/Dashboard/AllUser";
 import RequiredAdmin from "./pages/Shared/RequiredAdmin";
+import AllOrders from "./pages/Dashboard/AllOrders";
 
 function App() {
   return (
@@ -42,6 +43,14 @@ function App() {
             element={
               <RequiredAdmin>
                 <AllUser></AllUser>
+              </RequiredAdmin>
+            }
+          ></Route>
+          <Route
+            path="allorder"
+            element={
+              <RequiredAdmin>
+                <AllOrders></AllOrders>
               </RequiredAdmin>
             }
           ></Route>
