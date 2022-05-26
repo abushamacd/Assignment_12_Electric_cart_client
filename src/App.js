@@ -19,6 +19,7 @@ import Blogs from "./pages/Blogs/Blogs";
 import AllUser from "./pages/Dashboard/AllUser";
 import RequiredAdmin from "./pages/Shared/RequiredAdmin";
 import AllOrders from "./pages/Dashboard/AllOrders";
+import AddProduct from "./pages/Dashboard/AddProduct";
 
 function App() {
   return (
@@ -51,6 +52,14 @@ function App() {
             element={
               <RequiredAdmin>
                 <AllOrders></AllOrders>
+              </RequiredAdmin>
+            }
+          ></Route>
+          <Route
+            path="addproduct"
+            element={
+              <RequiredAdmin>
+                <AddProduct></AddProduct>
               </RequiredAdmin>
             }
           ></Route>

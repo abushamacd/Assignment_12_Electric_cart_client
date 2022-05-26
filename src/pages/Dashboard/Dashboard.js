@@ -36,10 +36,13 @@ const Dashboard = () => {
           {admin && (
             <>
               <li className="border-b-2 border-secondary">
-                <Link to={"/dashboard/alluser"}>All Users</Link>
+                <Link to={"/dashboard/alluser"}>Make Admin</Link>
               </li>
               <li className="border-b-2 border-secondary">
                 <Link to={"/dashboard/allorder"}>Manage All Orders</Link>
+              </li>
+              <li className="border-b-2 border-secondary">
+                <Link to={"/dashboard/addproduct"}>Add A Product</Link>
               </li>
             </>
           )}
