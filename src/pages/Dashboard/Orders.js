@@ -4,6 +4,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
 import Loading from "../Shared/Loading";
 import OrderDeleteModal from "./OrderDeleteModal";
+import { Link } from "react-router-dom";
 
 const Orders = () => {
   const [user, loading] = useAuthState(auth);
@@ -52,7 +53,26 @@ const Orders = () => {
                 <td>{order.productName}</td>
                 <td>{order.price}</td>
                 <td>{order.quantity}</td>
-                <td>Status</td>
+                <td>
+                  {order.price && !order.paid && (
+                    <Link to={`/dashboard/payment/${order._id}`}>
+                      <button className="btn btn-xs btn-success">pay</button>
+                    </Link>
+                  )}
+                  {order.price && order.paid && (
+                    <div>
+                      <p>
+                        <span className="text-success">Paid</span>
+                      </p>
+                      <p>
+                        Transaction id:{" "}
+                        <span className="text-success">
+                          {order.transactionId}
+                        </span>
+                      </p>
+                    </div>
+                  )}
+                </td>
                 <td>
                   <label
                     onClick={() => setDeletingOrder(order)}
