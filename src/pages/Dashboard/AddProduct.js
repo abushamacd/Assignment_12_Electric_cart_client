@@ -40,7 +40,7 @@ const AddProduct = () => {
             img: img,
           };
           // Send to DB
-          fetch("http://localhost:5000/product", {
+          fetch("https://ancient-taiga-08773.herokuapp.com/product", {
             method: "POST",
             headers: {
               "content-type": "application/json",

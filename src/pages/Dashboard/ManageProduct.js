@@ -10,7 +10,7 @@ const ManageProduct = () => {
     isLoading,
     refetch,
   } = useQuery("products", () =>
-    fetch(`http://localhost:5000/product`, {
+    fetch(`https://ancient-taiga-08773.herokuapp.com/product`, {
       method: "GET",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")} `,

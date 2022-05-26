@@ -6,7 +6,7 @@ const Tools = () => {
   const reverseTools = [...tools].reverse();
   const slicedTools = reverseTools.slice(0, 6);
   useEffect(() => {
-    const url = "http://localhost:5000/product";
+    const url = "https://ancient-taiga-08773.herokuapp.com/product";
     fetch(url)
       .then((res) => res.json())
       .then((data) => setTools(data));

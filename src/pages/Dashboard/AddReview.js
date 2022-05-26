@@ -39,7 +39,7 @@ const AddReview = () => {
             img: img,
           };
           // Send to DB
-          fetch("http://localhost:5000/review", {
+          fetch("https://ancient-taiga-08773.herokuapp.com/review", {
             method: "POST",
             headers: {
               "content-type": "application/json",

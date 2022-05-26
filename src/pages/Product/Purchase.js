@@ -12,7 +12,7 @@ const Purchase = () => {
   // Set data
   const [tools, setTools] = useState([]);
   useEffect(() => {
-    const url = `http://localhost:5000/product/${id}`;
+    const url = `https://ancient-taiga-08773.herokuapp.com/product/${id}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setTools(data));
@@ -38,7 +38,7 @@ const Purchase = () => {
       quantity: event.target.quantity.value,
     };
 
-    fetch("http://localhost:5000/order", {
+    fetch("https://ancient-taiga-08773.herokuapp.com/order", {
       method: "POST",
       headers: {
         "content-type": "application/json",

@@ -5,7 +5,7 @@ const OrderDeleteModal = ({ deletingOrder, refetch, setDeletingOrder }) => {
   const { _id, productName } = deletingOrder;
 
   const handleDelete = () => {
-    fetch(`http://localhost:5000/order/${_id}`, {
+    fetch(`https://ancient-taiga-08773.herokuapp.com/order/${_id}`, {
       method: "DELETE",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,
