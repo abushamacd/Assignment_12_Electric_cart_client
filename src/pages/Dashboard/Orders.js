@@ -74,13 +74,15 @@ const Orders = () => {
                   )}
                 </td>
                 <td>
-                  <label
-                    onClick={() => setDeletingOrder(order)}
-                    for="deleteOrderModal"
-                    class="btn btn-xs bg-red-600 text-base-100"
-                  >
-                    Cancel
-                  </label>
+                  {!order.paid && (
+                    <label
+                      onClick={() => setDeletingOrder(order)}
+                      for="deleteOrderModal"
+                      class="btn btn-xs bg-red-600 text-base-100"
+                    >
+                      Cancel
+                    </label>
+                  )}
                 </td>
               </tr>
             ))}

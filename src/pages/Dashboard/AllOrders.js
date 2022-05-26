@@ -47,15 +47,25 @@ const AllOrders = () => {
                 <td>{order.productName}</td>
                 <td>{order.price}</td>
                 <td>{order.quantity}</td>
-                <td>Status</td>
                 <td>
-                  <label
-                    onClick={() => setDeletingOrder(order)}
-                    for="deleteOrderModal"
-                    class="btn btn-xs bg-red-600 text-base-100"
-                  >
-                    Delete
-                  </label>
+                  {order.price && order.paid && (
+                    <div>
+                      <p>
+                        <span className="text-success">Paid</span>
+                      </p>
+                    </div>
+                  )}
+                </td>
+                <td>
+                  {!order.paid && (
+                    <label
+                      onClick={() => setDeletingOrder(order)}
+                      for="deleteOrderModal"
+                      class="btn btn-xs bg-red-600 text-base-100"
+                    >
+                      Delete
+                    </label>
+                  )}
                 </td>
               </tr>
             ))}
