@@ -14,7 +14,9 @@ const Reviews = () => {
 
   return (
     <div>
-      <h2>Reviews</h2>
+      <h2 className="text-center capitalize text-4xl mb-5">
+        Our happy Client says
+      </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {reverseReview.map((review) => (
           <div key={review._id} class="rounded-lg shadow-xl bg-white p-10">
