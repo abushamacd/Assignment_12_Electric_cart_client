@@ -1,16 +1,9 @@
 import React from "react";
 import { useQuery } from "react-query";
-import { useAuthState } from "react-firebase-hooks/auth";
-import auth from "../../firebase.init";
 import Loading from "../Shared/Loading";
 import UserRow from "./UserRow";
 
-const Orders = () => {
-  const [user, loading] = useAuthState(auth);
-
-  const email = user.email;
-  // const [lUser, setLuser] = useState({});
-
+const AllUser = () => {
   const {
     data: users,
     isLoading,
@@ -31,7 +24,6 @@ const Orders = () => {
   }
   return (
     <div>
-      <h2>Orders</h2>
       <div class="overflow-x-auto">
         <table class="table w-full">
           {/* <!-- head --> */}
@@ -59,4 +51,4 @@ const Orders = () => {
   );
 };
 
-export default Orders;
+export default AllUser;
