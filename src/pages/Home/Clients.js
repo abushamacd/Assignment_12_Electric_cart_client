@@ -6,6 +6,7 @@ import logo4 from "../../assets/client_logo/Rep.png";
 import logo5 from "../../assets/client_logo/Ser.png";
 
 const Clients = () => {
+  // Client data
   const clients = [
     {
       _id: 1,

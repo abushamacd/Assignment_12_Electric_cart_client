@@ -3,6 +3,7 @@ import { toast } from "react-toastify";
 
 const UserRow = ({ user, index, refetch }) => {
   const { email, role } = user;
+  // Make user to Admin
   const makeAdmin = () => {
     fetch(`https://ancient-taiga-08773.herokuapp.com/user/admin/${email}`, {
       method: "PUT",

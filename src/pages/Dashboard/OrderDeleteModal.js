@@ -3,7 +3,7 @@ import { toast } from "react-toastify";
 
 const OrderDeleteModal = ({ deletingOrder, refetch, setDeletingOrder }) => {
   const { _id, productName } = deletingOrder;
-
+  // Order delete from DB
   const handleDelete = () => {
     fetch(`https://ancient-taiga-08773.herokuapp.com/order/${_id}`, {
       method: "DELETE",

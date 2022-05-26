@@ -15,7 +15,7 @@ const RequiredAdmin = ({ children }) => {
   if (loading || adminLoading) {
     return <Loading />;
   }
-
+  // Sign out
   if (!user || !admin) {
     signOut(auth);
     return <Navigate to="/login" state={{ from: location }} replace />;

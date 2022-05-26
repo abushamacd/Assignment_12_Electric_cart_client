@@ -7,12 +7,11 @@ import OrderDeleteModal from "./OrderDeleteModal";
 import { Link } from "react-router-dom";
 
 const Orders = () => {
-  const [user, loading] = useAuthState(auth);
+  const [user] = useAuthState(auth);
   const [deletingOrder, setDeletingOrder] = useState(null);
 
   const email = user.email;
-  // const [lUser, setLuser] = useState({});
-
+  // load order
   const {
     data: order,
     isLoading,
@@ -87,6 +86,7 @@ const Orders = () => {
           </tbody>
         </table>
       </div>
+      {/* Load Modal */}
       {deletingOrder && (
         <OrderDeleteModal
           deletingOrder={deletingOrder}

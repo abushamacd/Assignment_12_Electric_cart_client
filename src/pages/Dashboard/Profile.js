@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Loading from "../Shared/Loading";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
@@ -7,7 +7,7 @@ import { FaLinkedin, FaFacebookSquare } from "react-icons/fa";
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
 const Profile = () => {
-  const [user, loading] = useAuthState(auth);
+  const [user] = useAuthState(auth);
 
   const email = user.email;
 
@@ -19,6 +19,7 @@ const Profile = () => {
     reset,
   } = useForm();
 
+  // Load user
   const {
     data: lUser,
     isLoading,
@@ -31,6 +32,8 @@ const Profile = () => {
       },
     }).then((res) => res.json())
   );
+
+  // ImgBB API key
   const imgStorageKey = "0d249f6ebce01b322c3e885d02f76781";
 
   // handle submit
@@ -47,6 +50,7 @@ const Profile = () => {
       .then((result) => {
         if (result.success) {
           const img = result.data.url;
+          // Create profile data
           const update = {
             name: data.name,
             email: email,
@@ -157,7 +161,6 @@ const Profile = () => {
           <div className="card flex-shrink-0 w-full max-w-lg shadow-2xl bg-base-100">
             <div className="card-body">
               <h2 className="text-center text-2xl font-bold">Profile Update</h2>
-
               <form onSubmit={handleSubmit(onSubmit)}>
                 {/* Name */}
                 <div className="form-control w-full max-w-lg">

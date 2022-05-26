@@ -3,9 +3,9 @@ import me from "../../assets/me.jpeg";
 import project1 from "../../assets/projects/saas.png";
 import project2 from "../../assets/projects/tea.png";
 import project3 from "../../assets/projects/resturent.png";
-import { Link } from "react-router-dom";
 
 const Portfolio = () => {
+  // Project data
   const projects = [
     {
       _id: 1,

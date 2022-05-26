@@ -7,7 +7,7 @@ const ProductDeleteModal = ({
   setDeletingProduct,
 }) => {
   const { _id, name } = deletingProduct;
-
+  // Delete product from db
   const handleDelete = () => {
     fetch(`https://ancient-taiga-08773.herokuapp.com/product/${_id}`, {
       method: "DELETE",

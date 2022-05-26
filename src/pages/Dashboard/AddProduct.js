@@ -5,7 +5,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
 
 const AddProduct = () => {
-  const [user, loading] = useAuthState(auth);
+  const [user] = useAuthState(auth);
 
   const imgStorageKey = "0d249f6ebce01b322c3e885d02f76781";
   // hook form
@@ -30,6 +30,7 @@ const AddProduct = () => {
       .then((result) => {
         if (result.success) {
           const img = result.data.url;
+          // Create Product
           const product = {
             name: data.name,
             email: user?.email,

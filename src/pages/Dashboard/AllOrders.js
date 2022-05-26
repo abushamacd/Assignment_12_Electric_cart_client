@@ -4,6 +4,7 @@ import Loading from "../Shared/Loading";
 import OrderDeleteModal from "./OrderDeleteModal";
 
 const AllOrders = () => {
+  // set state
   const [deletingOrder, setDeletingOrder] = useState(null);
 
   const {

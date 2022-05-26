@@ -3,7 +3,7 @@ import { FaStar } from "react-icons/fa";
 
 const Reviews = () => {
   const [reviews, setReviews] = useState([]);
-
+  // load review
   useEffect(() => {
     fetch("https://ancient-taiga-08773.herokuapp.com/review").then((res) =>
       res.json().then((data) => setReviews(data))

@@ -32,6 +32,7 @@ const Header = () => {
       <li>
         <Link to="/dashboard">Dashboard</Link>
       </li>
+      {/* Sign out button */}
       <li>
         {user ? (
           <button className="btn btn-ghost" onClick={logout}>

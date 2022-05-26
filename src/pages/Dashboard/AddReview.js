@@ -1,13 +1,12 @@
 import React from "react";
 import { toast } from "react-toastify";
 import { useForm } from "react-hook-form";
-import { useQuery } from "react-query";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
 
 const AddReview = () => {
-  const [user, loading] = useAuthState(auth);
-
+  const [user] = useAuthState(auth);
+  // ImgBB API key
   const imgStorageKey = "0d249f6ebce01b322c3e885d02f76781";
   // hook form
   const {
@@ -31,6 +30,7 @@ const AddReview = () => {
       .then((result) => {
         if (result.success) {
           const img = result.data.url;
+          // Create review
           const review = {
             name: data.name,
             email: user?.email,
@@ -122,7 +122,6 @@ const AddReview = () => {
             )}
           </label>
         </div>
-
         {/* Ratings */}
         <div className="form-control w-full max-w-xs">
           <label className="label">

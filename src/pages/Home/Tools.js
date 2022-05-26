@@ -3,8 +3,10 @@ import Tool from "./Tool";
 
 const Tools = () => {
   const [tools, setTools] = useState([]);
+  // Load data reverse and slice
   const reverseTools = [...tools].reverse();
   const slicedTools = reverseTools.slice(0, 6);
+  // Load product
   useEffect(() => {
     const url = "https://ancient-taiga-08773.herokuapp.com/product";
     fetch(url)

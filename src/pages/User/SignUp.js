@@ -5,10 +5,7 @@ import {
 } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
 import { useUpdateProfile } from "react-firebase-hooks/auth";
-
-// hook form
 import { useForm } from "react-hook-form";
-
 import { Link, useNavigate } from "react-router-dom";
 import Loading from "../Shared/Loading";
 import useToken from "../../hooks/useToken";

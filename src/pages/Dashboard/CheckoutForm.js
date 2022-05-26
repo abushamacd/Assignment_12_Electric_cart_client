@@ -3,6 +3,7 @@ import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 import Loading from "../Shared/Loading";
 
 const CheckoutForm = ({ order }) => {
+  // set state
   const stripe = useStripe();
   const elements = useElements();
   const [cardError, setCardError] = useState("");
@@ -11,8 +12,9 @@ const CheckoutForm = ({ order }) => {
   const [processing, setProcessing] = useState(false);
   const [transactionId, setTransactionId] = useState("");
 
+  // De-structuring
   const { _id, price, name, email } = order;
-
+  // Payment Intent
   useEffect(() => {
     fetch("https://ancient-taiga-08773.herokuapp.com/create-payment-intent", {
       method: "POST",
@@ -30,6 +32,7 @@ const CheckoutForm = ({ order }) => {
       });
   }, [price]);
 
+  // Handle Submit
   const handleSubmit = async (event) => {
     event.preventDefault();
 
@@ -49,10 +52,9 @@ const CheckoutForm = ({ order }) => {
     });
 
     setCardError(error?.message || "");
-
     setSuccess("");
     setProcessing(true);
-    // confirm card payment
+    // Confirm card payment
     const { paymentIntent, error: intentError } =
       await stripe.confirmCardPayment(clientSecret, {
         payment_method: {
@@ -72,7 +74,7 @@ const CheckoutForm = ({ order }) => {
       setCardError("");
       setTransactionId(paymentIntent.id);
       setSuccess("Congrats! Your payment is completed.");
-      //store payment on database
+      //Store payment on database
       const payment = {
         order: _id,
         transactionId: paymentIntent.id,

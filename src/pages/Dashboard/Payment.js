@@ -6,14 +6,15 @@ import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
 import CheckoutForm from "./CheckoutForm";
 
+// Spripe public key
 const stripePromise = loadStripe(
   "pk_test_51L2EsdAKL9h2k26kiUAfGJcl9QIF2AtlIDQvpKcR6xxeDSrWtZ7oSaVb2VMaaxN2pJdBnCeLwAlCNBmSqYX84kmO005wAJzn56"
 );
 
 const Payment = () => {
+  // Get order for payment
   const { id } = useParams();
   const url = `https://ancient-taiga-08773.herokuapp.com/order/${id}`;
-
   const { data: order, isLoading } = useQuery(["order", id], () =>
     fetch(url, {
       method: "GET",

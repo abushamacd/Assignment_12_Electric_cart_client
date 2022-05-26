@@ -4,7 +4,9 @@ import Loading from "../Shared/Loading";
 import ProductDeleteModal from "./ProductDeleteModal";
 
 const ManageProduct = () => {
+  // set state
   const [deletingProduct, setDeletingProduct] = useState(null);
+  // Load product
   const {
     data: products,
     isLoading,
@@ -57,6 +59,7 @@ const ManageProduct = () => {
           </tbody>
         </table>
       </div>
+      {/* Load Modal */}
       {deletingProduct && (
         <ProductDeleteModal
           deletingProduct={deletingProduct}

@@ -2,9 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
-import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
-import Loading from "../Shared/Loading";
 
 const Purchase = () => {
   // Get ID
@@ -18,7 +16,7 @@ const Purchase = () => {
       .then((data) => setTools(data));
   }, []);
   const { id: _id, name, img, minimum, quantity, description, price } = tools;
-  const [user, loading, error] = useAuthState(auth);
+  const [user] = useAuthState(auth);
 
   const [inputQuantity, setInputQuantity] = useState(0);
 
@@ -27,7 +25,7 @@ const Purchase = () => {
   // Booking Order
   const handleOrder = (event) => {
     event.preventDefault();
-
+    // Create order
     const order = {
       productName: event.target.pName.value,
       name: event.target.name.value,
@@ -37,7 +35,7 @@ const Purchase = () => {
       price: totalPrice,
       quantity: event.target.quantity.value,
     };
-
+    // Send to DB
     fetch("https://ancient-taiga-08773.herokuapp.com/order", {
       method: "POST",
       headers: {

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 
 const useAdmin = (user) => {
+  // Set state
   const [admin, setAdmin] = useState(false);
   const [adminLoading, setAdminLoading] = useState(true);
   useEffect(() => {
