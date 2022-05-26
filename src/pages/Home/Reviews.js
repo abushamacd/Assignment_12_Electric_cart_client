@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { FaStar } from "react-icons/fa";
 
 const Reviews = () => {
   const [reviews, setReviews] = useState([]);
@@ -25,11 +26,14 @@ const Reviews = () => {
             <header class=" text-2xl font-extrabold py-4 px-4 text-center">
               {review.name}
             </header>
-            <div>
-              <ul class="text-gray-500 text-center font-semibold">
-                <li>Rating </li>
-              </ul>
+            <div class="text-secondary text-center font-semibold flex justify-center">
+              {Array.from({ length: review.rating }).map((_, idx) => (
+                <span key={idx}>
+                  <FaStar />
+                </span>
+              ))}
             </div>
+            <p className="text-center">{review.desc}</p>
           </div>
         ))}
       </div>
