@@ -42,9 +42,8 @@ const AllOrders = () => {
               <tr key={order._id}>
                 <th>{index + 1}</th>
                 <td>{order.productName}</td>
-                <td>{order.quantity}</td>
                 <td>{order.price}</td>
-                <td>{order.treatment}</td>
+                <td>{order.quantity}</td>
               </tr>
             ))}
           </tbody>

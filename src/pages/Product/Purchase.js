@@ -193,8 +193,15 @@ const Purchase = () => {
                   className="input input-bordered input-secondary w-full max-w-lg mt-2"
                 />
                 <label htmlFor="">
-                  <small className="text-red-600">
-                    Minimum Order {minimum}{" "}
+                  <small className="flex justify-between">
+                    <span>
+                      Minimum Order:
+                      <span className="text-red-600">{minimum}</span>
+                    </span>
+                    <span>
+                      Maximum Order:
+                      <span className="text-red-600">{quantity}</span>
+                    </span>
                   </small>
                 </label>
                 <input

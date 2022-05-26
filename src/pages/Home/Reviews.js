@@ -9,8 +9,8 @@ const Reviews = () => {
       res.json().then((data) => setReviews(data))
     );
   }, []);
-
   const reverseReview = [...reviews].reverse();
+  const slicedReviews = reverseReview.slice(0, 3);
 
   return (
     <div>
@@ -18,7 +18,7 @@ const Reviews = () => {
         Our happy Client says
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {reverseReview.map((review) => (
+        {slicedReviews.map((review) => (
           <div key={review._id} class="rounded-lg shadow-xl bg-white p-10">
             <img
               src={review.img}

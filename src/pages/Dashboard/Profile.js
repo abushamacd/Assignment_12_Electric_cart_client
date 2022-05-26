@@ -100,8 +100,8 @@ const Profile = () => {
                   <div class="photo-wrapper p-2">
                     <img
                       class="w-32 h-32 rounded-full mx-auto"
-                      src={lUser?.img}
-                      alt="John Doe"
+                      src={lUser?.img || "https://i.ibb.co/MgsTCcv/avater.jpg"}
+                      alt=""
                     />
                   </div>
                   <div class="p-2">

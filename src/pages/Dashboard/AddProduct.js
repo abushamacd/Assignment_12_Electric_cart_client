@@ -39,7 +39,6 @@ const AddProduct = () => {
             quantity: data.quantity,
             img: img,
           };
-          console.log(product);
           // Send to DB
           fetch("http://localhost:5000/product", {
             method: "POST",

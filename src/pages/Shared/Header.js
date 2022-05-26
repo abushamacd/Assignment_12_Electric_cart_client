@@ -24,13 +24,13 @@ const Header = () => {
         <Link to="/home">Home</Link>
       </li>
       <li>
-        <Link to="/dashboard">Dashboard</Link>
-      </li>
-      <li>
         <Link to="/blogs">My Blogs</Link>
       </li>
       <li>
         <Link to="/porfolio">My Porfolio</Link>
+      </li>
+      <li>
+        <Link to="/dashboard">Dashboard</Link>
       </li>
       <li>
         {user ? (
