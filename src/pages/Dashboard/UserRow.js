@@ -5,7 +5,7 @@ const UserRow = ({ user, index, refetch }) => {
   const { email, role } = user;
   // Make user to Admin
   const makeAdmin = () => {
-    fetch(`https://ancient-taiga-08773.herokuapp.com/user/admin/${email}`, {
+    fetch(`https://electric-cart-server.onrender.com/user/admin/${email}`, {
       method: "PUT",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,

@@ -12,7 +12,7 @@ const ManageProduct = () => {
     isLoading,
     refetch,
   } = useQuery("products", () =>
-    fetch(`https://ancient-taiga-08773.herokuapp.com/product`, {
+    fetch(`https://electric-cart-server.onrender.com/product`, {
       method: "GET",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")} `,

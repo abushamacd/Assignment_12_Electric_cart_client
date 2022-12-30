@@ -16,7 +16,7 @@ const CheckoutForm = ({ order }) => {
   const { _id, price, name, email } = order;
   // Payment Intent
   useEffect(() => {
-    fetch("https://ancient-taiga-08773.herokuapp.com/create-payment-intent", {
+    fetch("https://electric-cart-server.onrender.com/create-payment-intent", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -79,7 +79,7 @@ const CheckoutForm = ({ order }) => {
         order: _id,
         transactionId: paymentIntent.id,
       };
-      fetch(`https://ancient-taiga-08773.herokuapp.com/order/${_id}`, {
+      fetch(`https://electric-cart-server.onrender.com/order/${_id}`, {
         method: "PATCH",
         headers: {
           "content-type": "application/json",

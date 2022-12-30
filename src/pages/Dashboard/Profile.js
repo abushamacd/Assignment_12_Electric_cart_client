@@ -25,7 +25,7 @@ const Profile = () => {
     isLoading,
     refetch,
   } = useQuery("users", () =>
-    fetch(`https://ancient-taiga-08773.herokuapp.com/user/${email}`, {
+    fetch(`https://electric-cart-server.onrender.com/user/${email}`, {
       method: "GET",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")} `,
@@ -64,7 +64,7 @@ const Profile = () => {
           };
 
           // // Send to DB
-          fetch(`https://ancient-taiga-08773.herokuapp.com/user/${email}`, {
+          fetch(`https://electric-cart-server.onrender.com/user/${email}`, {
             method: "PUT",
             headers: {
               "content-type": "application/json",

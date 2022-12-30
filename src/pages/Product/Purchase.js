@@ -10,7 +10,7 @@ const Purchase = () => {
   // Set data
   const [tools, setTools] = useState([]);
   useEffect(() => {
-    const url = `https://ancient-taiga-08773.herokuapp.com/product/${id}`;
+    const url = `https://electric-cart-server.onrender.com/product/${id}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setTools(data));
@@ -36,7 +36,7 @@ const Purchase = () => {
       quantity: event.target.quantity.value,
     };
     // Send to DB
-    fetch("https://ancient-taiga-08773.herokuapp.com/order", {
+    fetch("https://electric-cart-server.onrender.com/order", {
       method: "POST",
       headers: {
         "content-type": "application/json",

@@ -12,7 +12,7 @@ const AllOrders = () => {
     isLoading,
     refetch,
   } = useQuery("orders", () =>
-    fetch(`https://ancient-taiga-08773.herokuapp.com/order`, {
+    fetch(`https://electric-cart-server.onrender.com/order`, {
       method: "GET",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")} `,

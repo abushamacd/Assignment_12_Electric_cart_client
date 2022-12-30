@@ -41,7 +41,7 @@ const AddProduct = () => {
             img: img,
           };
           // Send to DB
-          fetch("https://ancient-taiga-08773.herokuapp.com/product", {
+          fetch("https://electric-cart-server.onrender.com/product", {
             method: "POST",
             headers: {
               "content-type": "application/json",

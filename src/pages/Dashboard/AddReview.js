@@ -39,7 +39,7 @@ const AddReview = () => {
             img: img,
           };
           // Send to DB
-          fetch("https://ancient-taiga-08773.herokuapp.com/review", {
+          fetch("https://electric-cart-server.onrender.com/review", {
             method: "POST",
             headers: {
               "content-type": "application/json",

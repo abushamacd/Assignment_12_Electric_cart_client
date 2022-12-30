@@ -14,7 +14,7 @@ const stripePromise = loadStripe(
 const Payment = () => {
   // Get order for payment
   const { id } = useParams();
-  const url = `https://ancient-taiga-08773.herokuapp.com/order/${id}`;
+  const url = `https://electric-cart-server.onrender.com/order/${id}`;
   const { data: order, isLoading } = useQuery(["order", id], () =>
     fetch(url, {
       method: "GET",
